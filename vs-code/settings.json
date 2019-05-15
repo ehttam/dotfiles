@@ -1,0 +1,88 @@
+{
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "editor.lineNumbers": "relative",
+    "emmet.includeLanguages": {},
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "vim.statusBarColorControl": true,
+    "editor.minimap.enabled": true,
+    "vsicons.projectDetection.autoReload": true,
+    "editor.renderControlCharacters": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": [
+            "comment"
+            ],
+            "settings": {
+              "fontStyle": "italic",
+            }
+          },
+          {
+          "scope":[
+            "punctuation.definition.block.js"
+          ],
+          "settings": {
+            "fontStyle": "bold",
+          }
+          },
+          {
+            "scope": [
+              "invalid",
+              "keyword.operator",
+              "constant.numeric.css",
+              "keyword.other.unit.px.css",
+              "constant.numeric.decimal.js",
+              "constant.numeric.json"
+            ],
+            "settings": {
+              "fontStyle": ""
+            }
+          },
+          {
+            "scope": [
+                "entity.name.function.js",
+                
+            ],
+            "settings": {
+              "fontStyle": "italic",
+              "foreground": "#f78c6cff"
+            }
+          },
+          {
+              "scope":[
+                "support.function.js"
+              ],
+              "settings": {
+                  "foreground": "#92d6ea",
+              }
+          },
+          {
+            "scope": [
+                "support.type.primitive.ts"
+                
+            ],
+            "settings": {
+              "fontStyle": "italic",
+              "foreground": "#97ff5c"
+            }
+          }
+        ]
+    },
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#005f5f",
+      "statusBar.noFolderBackground": "#005f5f",
+      "statusBar.debuggingBackground": "#005f5f"
+    },
+    "editor.wordWrap": "on",
+    "cfml.autoCloseTags.enable": false,
+    "editor.fontFamily": "'Operator Mono SSm Light'",
+    "files.associations": {
+      ".cflintrc": "json"
+    },
+}
