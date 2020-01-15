@@ -1,88 +1,58 @@
 {
-    "editor.fontLigatures": true,
-    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorTheme": "SynthWave '84",
+    "editor.fontFamily": "'Operator Mono SSM Light', Consolas, 'Courier New', monospace",
+    "vscode_custom_css.imports": [
+        "file:///D:/contens/_mra/vscode/synthwave84.css"
+    ],
+    "files.associations": {
+        ".cflintrc": "json"
+    },
+    "cflint.jarPath": "d:\\contens\\cflint\\CFLint-1.4.1-all.jar",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    
+    // vim
     "editor.lineNumbers": "relative",
-    "emmet.includeLanguages": {},
-    "vim.leader": "<space>",
+    "vim.leader": "<,>",
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
     "vim.statusBarColorControl": true,
-    "editor.minimap.enabled": true,
-    "vsicons.projectDetection.autoReload": true,
-    "editor.renderControlCharacters": true,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-          {
-            "scope": [
-            "comment"
-            ],
-            "settings": {
-              "fontStyle": "italic",
-            }
-          },
-          {
-          "scope":[
-            "punctuation.definition.block.js"
-          ],
-          "settings": {
-            "fontStyle": "bold",
-          }
-          },
-          {
-            "scope": [
-              "invalid",
-              "keyword.operator",
-              "constant.numeric.css",
-              "keyword.other.unit.px.css",
-              "constant.numeric.decimal.js",
-              "constant.numeric.json"
-            ],
-            "settings": {
-              "fontStyle": ""
-            }
-          },
-          {
-            "scope": [
-                "entity.name.function.js",
-                
-            ],
-            "settings": {
-              "fontStyle": "italic",
-              "foreground": "#f78c6cff"
-            }
-          },
-          {
-              "scope":[
-                "support.function.js"
-              ],
-              "settings": {
-                  "foreground": "#92d6ea",
-              }
-          },
-          {
-            "scope": [
-                "support.type.primitive.ts"
-                
-            ],
-            "settings": {
-              "fontStyle": "italic",
-              "foreground": "#97ff5c"
-            }
-          }
-        ]
-    },
     "workbench.colorCustomizations": {
-      "statusBar.background": "#005f5f",
-      "statusBar.noFolderBackground": "#005f5f",
-      "statusBar.debuggingBackground": "#005f5f"
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
     },
-    "editor.wordWrap": "on",
-    "cfml.autoCloseTags.enable": false,
-    "editor.fontFamily": "'Operator Mono SSm Light'",
-    "files.associations": {
-      ".cflintrc": "json"
+    
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+        }
+    ],
+
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": true
     },
+    "git.confirmSync": false,
+
+    "terminal.integrated.shell.windows": "cmd.exe",
+
+    "terminal.integrated.env.windows": {
+        "CMDER_ROOT": "D:\\contens\\_mra\\_tools\\cmder"
+    },
+    "terminal.integrated.shellArgs.windows": [
+        "/k",
+        "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
+    ]
+      
 }
