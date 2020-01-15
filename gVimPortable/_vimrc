@@ -6,6 +6,10 @@ source $VIMRUNTIME/mswin.vim
 
 " fullscreen at startup
 au GUIEnter * simalt ~x
+behave mswin
+" bei ctrl+f nicht suchen popup oeffnen
+unmap <C-F>
+
 
 " disable arrorw key
 nnoremap <Left> :echo "No left for you!"<CR>
@@ -21,15 +25,24 @@ nnoremap <Down> :echo "No down for you!"<CR>
 vnoremap <Down> :<C-u>echo "No down for you!"<CR>
 inoremap <Down> <C-o>:echo "No down for you!"<CR>
 
+" Abbreviations
+abbr funciton function
+abbr cdump cfdump
+abbr tempalte template
+abbr fitler filter
+abbr cosnt const
+abbr attribtue attribute
+abbr attribuet attribute
+
 " SEARCH
 " map <esc> no highlight
-map <esc> :noh<cr> 
+map <esc> :noh<cr>
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 color evening
-behave mswin
 
+" THEME
 " material theme
 set background=dark
 colorscheme material
@@ -38,6 +51,7 @@ let g:airline_theme = 'material'
 let g:lightline = { 'colorscheme': 'material_vim' }
 
 syntax on
+filetype plugin indent on
 
 " fileencoding
 set enc=utf-8
@@ -45,30 +59,90 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
 
 " set guifont=Terminus:h12
+" set guifont=Terminus_(TTF)_for_Windows:h12
 set guifont=Operator_Mono_SSm_book:h11
+" set guifont=Operator_Mono_SSm_light:h11
 
+
+" Appearance
 set number relativenumber
 set ignorecase
 set smartcase
 set cursorline
-set wrap!
+" set wrap!
+set wrap " turn on line wrapping
+set wrapmargin=8 " wrap lines when coming within n characters from side
+set linebreak " set soft wrapping
+set showbreak=… " show ellipsis at breaking
+
 
 set smartindent
+set autoindent " automatically set indent of new line
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 
+" Tab control
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
+set shiftround " round indent to a multiple of 'shiftwidth'
+
 set showcmd             " show command in bottom bar
 set wildmenu            " visual autocomplete for command menu
+
+
+" General Mappings {{{
+	" change <Leader> from \ to ,
+	let mapleader = ","
+
+    " remap esc
+    inoremap jk <esc>
+
+    " shortcut to save
+    nmap <leader>, :w<cr>
+
+    " set paste toggle
+    set pastetoggle=<leader>v
+
+    " edit ~/.config/nvim/init.vim
+    map <leader>ev :e! D:\contens\_mra\_tools\gVimPortable\Data\settings\_vimrc<cr>
+
+    " clear highlighted search
+    noremap <space> :set hlsearch! hlsearch?<cr>
+
+    " remove extra whitespace
+    nmap <leader><space> :%s/\s\+$<cr>
+    nmap <leader><space><space> :%s/\n\{2,}/\r\r/g<cr>
+
+    " keep visual selection when indenting/outdenting
+    vmap < <gv
+    vmap > >gv
+
+    " switch between current and last buffer
+    nmap <leader>. <c-^>
+
+    map <silent> <C-h> <Plug>WinMoveLeft
+    map <silent> <C-j> <Plug>WinMoveDown
+    map <silent> <C-k> <Plug>WinMoveUp
+    map <silent> <C-l> <Plug>WinMoveRight
+
+    " toggle cursor line
+    nnoremap <leader>i :set cursorline!<cr>
+" }}}
+
+
 
 " SWAPFILE - deaktiviert weil es ggf. start von vim ausbremst
 " set noswapfile
 "
 " https://stackoverflow.com/questions/2823608/how-do-i-turn-off-automatic-saving-of-a-vim-file-with-a-suffix
-set backupdir-=. "  removes the current directory from the backup directory list 
+set backupdir-=. "  removes the current directory from the backup directory list
 set backupdir^=~/tmp,/tmp " save backups to ~/tmp, or to /tmp if that's not possible.
-set backupdir^=D:\contens\_mra\_tools\gVimPortable\tmp 
+set backupdir^=D:\contens\_mra\_tools\gVimPortable\tmp
+set directory=D:\contens\_mra\_tools\gVimPortable\tmp
+set undodir=D:\contens\_mra\_tools\gVimPortable\tmp
 " set backupdir^=$TEMP
-
 
 augroup numbertoggle
   autocmd!
@@ -78,18 +152,26 @@ augroup END
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+" CFML plugin
 au BufNewFile,BufRead *.cfm,*.cfc		setf cfml
 
 let g:vim_markdown_folding_disabled = 1
 
 " NERDTREE
 " versuch sublime keys crtl+k+b - map <silent> <C-k>b :NERDTreeToggle<CR>
-silent! nmap <F2> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
+" silent! nmap <F2> :NERDTreeToggle<CR>
+" silent! map <F3> :NERDTreeFind<CR>
+" let g:NERDTreeMapActivateNode="<F3>"
+" let g:NERDTreeMapPreview="<F4>"
+silent! nmap <leader>k :NERDTreeToggle<CR>
+silent! map <leader>r :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" NERDTree beim Start öffnen
+" autocmd vimenter * NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " crtlp.vim
 let g:ctrlp_map = '<c-p>'
@@ -126,7 +208,7 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-" Rainbow 
+" Rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 let g:rainbow_conf = {
 \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -154,3 +236,15 @@ let g:rainbow_conf = {
 
 " vim-airline
 " let g:airline_powerline_fonts = 1
+
+
+" NERDCOMMENTER
+" important for nerdcommenter
+" " filetype plugin on
+
+" Add spaces after comment delimiters by default
+" " let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+" " let g:NERDCompactSexyComs = 1
+
+autocmd FileType apache setlocal commentstring=#\ %s
