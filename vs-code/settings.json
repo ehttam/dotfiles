@@ -13,14 +13,14 @@
     
     // vim
     "editor.lineNumbers": "relative",
-    "vim.leader": "<,>",
+    "vim.leader": ",",
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
     "vim.statusBarColorControl": true,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#5f00af",
-        "statusBar.noFolderBackground": "#5f00af",
-        "statusBar.debuggingBackground": "#5f00af"
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000"
     },
     
     "vim.sneak": true,
@@ -28,17 +28,53 @@
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-        }
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["<leader>","n"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        }, 
+        {
+            "before": ["<leader>",","],
+            "commands": [
+                ":w"
+                // "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": ["<leader>","q"],
+            "commands": [
+                ":q"
+                // "workbench.action.closeActiveEditor"
+            ]
     ],
-
+     "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": true
@@ -53,6 +89,82 @@
     "terminal.integrated.shellArgs.windows": [
         "/k",
         "%CMDER_ROOT%\\vendor\\bin\\vscode_init.cmd"
-    ]
+    ],
+    "auto-close-tag.excludedTags": [
+        "area",
+        "base",
+        "br",
+        "col",
+        "command",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "keygen",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr",
+        "cfabort",
+        "cfapplication",
+        "cfargument",
+        "cfassociate",
+        "cfbreak",
+        "cfchartdata",
+        "cfcollection",
+        "cfcontent",
+        "cfcontinue",
+        "cfcookie",
+        "cfdirectory",
+        "cfdump",
+        "cfelse",
+        "cfelseif",
+        "cferror",
+        "cfexecute",
+        "cfexit",
+        "cffile",
+        "cfflush",
+        "cfheader",
+        "cfhttpparam",
+        "cfimage",
+        "cfimport",
+        "cfinclude",
+        "cfindex",
+        "cfinput",
+        "cfinvokeargument",
+        "cflocation",
+        "cflog",
+        "cfloginuser",
+        "cflogout",
+        "cfmailparam",
+        "cfobject",
+        "cfobjectcache",
+        "cfparam",
+        "cfpop",
+        "cfprocessingdirective",
+        "cfprocparam",
+        "cfprocresult",
+        "cfproperty",
+        "cfqueryparam",
+        "cfregistry",
+        "cfreportparam",
+        "cfrethrow",
+        "cfreturn",
+        "cfschedule",
+        "cfsearch",
+        "cfset",
+        "cfsetting",
+        "cfthrow",
+        "cfwddx"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "html.mirrorCursorOnMatchingTag": false
       
 }
