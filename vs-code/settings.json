@@ -18,9 +18,9 @@
     "vim.easymotion": true,
     "vim.statusBarColorControl": true,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000"
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
     },
     
     "vim.sneak": true,
@@ -56,6 +56,26 @@
                 ":q"
                 // "workbench.action.closeActiveEditor"
             ]
+        },
+        {
+            "before": ["<leader>","z"],
+            "commands": [
+                "workbench.action.toggleEditorWidths"
+            ]
+        },
+        {
+            "before": ["<leader>","t"],
+            "commands": [
+                "workbench.action.terminal.toggleTerminal"
+            ]
+        },
+        {
+            "before": ["g","s"],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ]
+        }
+        
     ],
      "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -165,6 +185,7 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "html.mirrorCursorOnMatchingTag": false
+    "html.mirrorCursorOnMatchingTag": false,
+    "files.eol": "\n"
       
 }
