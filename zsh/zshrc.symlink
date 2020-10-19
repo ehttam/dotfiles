@@ -1,0 +1,256 @@
+# Short aliases
+alias q="exit"
+alias c="cd"
+alias e="echo"
+alias f="find"
+alias l="ll"
+alias ll='ls -alF'
+alias g="grep"
+alias ws="cd ~/workspace"
+
+
+# Prevent typos
+alias cd..="cd .."
+alias cd--="cd --"
+alias cdl='cd "$@" && ll'
+alias cl="cdl"
+alias sl="ls"
+alias pdw="pwd"
+alias clr="clear"
+alias dir="ls"
+
+# Tar aliases
+alias tarc="tar czvf"
+alias tarx="tar xzvf"
+alias tart="tar tzvf"
+
+# Add math support to calculator
+alias bc='bc -l'
+
+# Check if colordiff is installed and colorize the output of diff
+if command -v colordiff>/dev/null; then
+		alias diff='colordiff'
+		fi
+
+# Print path varaible with lines
+alias path='echo -e ${PATH//:/\\n}'
+
+# Time commands
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# Safty first... Never delete root or prompt on multible files
+alias rm='rm -I --preserve-root'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Resume the download
+alias wget='wget -c'
+
+# Use atop instead of top
+if command -v atop>/dev/null; then
+		alias top="atop"
+		fi
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fping='ping -c 5 -s.1'
+
+# Create human readable output
+alias mount='mount | column -t'
+
+# Better ps
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# You will always use pacman with sudo rights.
+alias apt-get="sudo apt-get"
+alias systemctl="sudo systemctl"
+alias update="/config/scripts/update.sh"
+
+# Add alias to reload tmux
+alias tmux-reload="tmux source-file ~/.tmux.conf"
+
+# Check if nvim is installed and use nvim as default
+if command -v nvim>/dev/null; then
+	alias vim='nvim'
+	alias vmi='nvim'
+	alias vi='nvim'
+	alias svim='sudo nvim'
+	alias vimc="nvim ~/.config/nvim/init.vim"
+	alias nano="nvim"
+else
+	alias vmi='vim'
+	alias vi='vim'
+	alias svim='sudo vim'
+	alias vimc="vim ~/.vimrc"
+	alias nano="vim"
+fi
+
+# export vars
+# always use nvim
+export EDITOR=nvim
+export VISUAL=$EDITOR
+
+# Create lang definitions
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export PYTHONPATH="$PYTHONPATH:/config"
+
+
+ # Put last paused action (used by C-Z) to foreground
+ bindkey '^t' fg
+
+# Function to search upwards
+findup() {
+# Get first argument
+	local path="$1"
+
+	# Check if path was given - should not start with an minus or be empty
+	if [[ "$path-" != -* ]]; then
+		# Path was given so shift
+		shift 1
+	else
+# Path was not given - use current dir as path
+		local path="."
+	fi
+
+	# Do white root not is reached
+	while [[ $path != / ]];
+	do
+	# Call find using the original parameter
+	find "$path" -maxdepth 1 -mindepth 1 "$@"
+	# Note: if you want to ignore symlinks, use "$(realpath -s "$path"/..)"
+	local path="$(readlink -f "$path"/..)"
+	done
+}
+
+code() {
+	if [[ $TERM_PROGRAM = "vscode" ]]; then
+		=code $@
+	else
+		VSCODE_IPC_HOOK_CLI=$(find /tmp -name 'vscode-ipc-*.sock' -printf "%T@ %p\n" 2>/dev/null | sort -nr | head -n 1 | awk '{print $2}')
+		local CODE_BIN=$(find /home/kpalatzky/.vscode-server/bin -name 'code')
+		[ -s $CODE_BIN ] && $CODE_BIN $@
+	fi
+}
+
+# Set zsh options
+setopt correct             # Turn on spelling correction
+setopt histignoredups      # Don't save duplicates in command history
+setopt noclobber           # Don't allow accidental file over-writes
+setopt nobeep              # Disable beep
+setopt chasedots           # Remove unnesseary directories. eg: './foo/bar/..' to './foo'
+setopt pushd_ignore_dups   # Do not push the same directory multible times to the stack
+
+#bindkey -v
+# bindkey "^L"      forward-char                         # ctrl-f
+# bindkey "^H"      backward-char                        # ctrl-b
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+# Keypad
+# 0 . Enter
+bindkey -s "^[Op" "0"
+bindkey -s "^[On" ","
+bindkey -s "^[OM" "^M"
+# 1 2 3
+bindkey -s "^[Oq" "1"
+bindkey -s "^[Or" "2"
+bindkey -s "^[Os" "3"
+# 4 5 6
+bindkey -s "^[Ot" "4"
+bindkey -s "^[Ou" "5"
+bindkey -s "^[Ov" "6"
+# 7 8 9
+bindkey -s "^[Ow" "7"
+bindkey -s "^[Ox" "8"
+bindkey -s "^[Oy" "9"
+# + -  * /
+bindkey -s "^[Ol" "+"
+bindkey -s "^[OS" "-"
+bindkey -s "^[OR" "*"
+bindkey -s "^[OQ" "/"
+
+# if mode indicator wasn't setup by theme, define default
+if [[ "$MODE_INDICATOR" == "" ]]; then
+	MODE_INDICATOR="%{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
+fi
+
+# global aliases
+alias -g L='|less'
+alias -g PB='2>&1 | curl -F c=@- https://ptpb.pw'
+alias -g N='>/dev/null'
+alias -g V='|vim'
+alias -g G='|grep'
+
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+	/usr/bin/ssh-agent | sed 's/^echo/#echo/' >! "${SSH_ENV}"
+	chmod 600 "${SSH_ENV}"
+	. "${SSH_ENV}" > /dev/null
+	/usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+	. "${SSH_ENV}" > /dev/null
+	#ps ${SSH_AGENT_PID} doesn't work under cywgin
+	=ps -ef | =grep ${SSH_AGENT_PID} | =grep ssh-agent$ > /dev/null || {
+		start_agent;
+	}
+else
+	start_agent;
+fi
+
+export DISABLE_AUTO_TITLE="true"
+export ZLE_RPROMPT_INDENT=0
+export KEYTIMEOUT=1
+
+# load  node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# load ruby version manager
+[[ -s "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
+
+# load sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Check if there is tmux and use it
+# if command -v tmux>/dev/null; then
+#	[[ ! $TERM =~ screen ]] && [[ $TERM_PROGRAM != "vscode" ]] && [ -z $TMUX ] && exec tmux -2
+# fi
+
+
+# intellij
+alias intellij="/home/mrager/dotfiles-mra/bin/intellij/run.sh"
+# alias intellijcore="/home/mrager/scripts/intellij/run-core.sh"
+
+# compile / create
+alias g="/home/mrager/dotfiles-mra/bin/xp_dev.sh"
+# rebuild
+alias r="/home/mrager/dotfiles-mra/bin/xp_rebuild_restart.sh"
+# docker restart project
+alias d="/home/mrager/dotfiles-mra/bin/docker_restart.sh"
+
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcr="docker-compose restart"
+alias dcf="docker-compose logs --tail=0 --follow"
+
+cd ~
