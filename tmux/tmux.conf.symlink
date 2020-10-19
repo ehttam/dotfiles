@@ -96,4 +96,4 @@ bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reatt
 ##  Color & Styles ##
 #####################
 
-source ~/dotfiles-mra/tmux/base16.sh
+source ~/dotfiles/tmux/base16.sh
