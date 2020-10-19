@@ -242,11 +242,11 @@ alias intellij="~/dotfiles-mra/bin/intellij/run.sh"
 # alias intellijcore="~/scripts/intellij/run-core.sh"
 
 # compile / create
-alias g="~/dotfiles-mra/bin/xp_dev.sh"
+alias g="~/dotfiles/bin/xp_dev.sh"
 # rebuild
-alias r="~/dotfiles-mra/bin/xp_rebuild_restart.sh"
+alias r="~/dotfiles/bin/xp_rebuild_restart.sh"
 # docker restart project
-alias d="~/dotfiles-mra/bin/docker_restart.sh"
+alias d="~/dotfiles/bin/docker_restart.sh"
 
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
