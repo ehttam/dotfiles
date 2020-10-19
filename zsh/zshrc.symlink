@@ -238,15 +238,15 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 # intellij
-alias intellij="/home/mrager/dotfiles-mra/bin/intellij/run.sh"
-# alias intellijcore="/home/mrager/scripts/intellij/run-core.sh"
+alias intellij="~/dotfiles-mra/bin/intellij/run.sh"
+# alias intellijcore="~/scripts/intellij/run-core.sh"
 
 # compile / create
-alias g="/home/mrager/dotfiles-mra/bin/xp_dev.sh"
+alias g="~/dotfiles-mra/bin/xp_dev.sh"
 # rebuild
-alias r="/home/mrager/dotfiles-mra/bin/xp_rebuild_restart.sh"
+alias r="~/dotfiles-mra/bin/xp_rebuild_restart.sh"
 # docker restart project
-alias d="/home/mrager/dotfiles-mra/bin/docker_restart.sh"
+alias d="~/dotfiles-mra/bin/docker_restart.sh"
 
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
