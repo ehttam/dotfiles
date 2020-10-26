@@ -1,1 +1,11 @@
 _dotfiles-arch/
+
+config/
+config/nvim/plugin/
+config/nvim/plugged/
+config/nvim/plugged/
+config/nvim/UltiSnips/
+config/nvim/syntax/
+config/nvim/autoload/
+
+suckless/dwm/dwm
