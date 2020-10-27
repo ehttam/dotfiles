@@ -6,12 +6,32 @@ set smartcase
 set showmode
 set incsearch
 
-set clipboard+=unnamed
-
+"" GLOBAL MAPPINGS
 let mapleader = ","
 nmap <leader>, :w<cr>
 nmap <leader>q :q<cr>
 
+"" NAVIGATION
+" The default C-o and C-i behaviours have certain inconsistencies with
+" Vim which I can't quite pinpoint.
+" I'm using the default IntelliJ behaviours instead.
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+nnoremap gn :action JumpToLastChange<CR>
+nnoremap gp :action JumpToNextChange<CR
+map <Space> :action GotoNextError<CR>
+
+""" CLIPBOARD SETTINGS
+set clipboard+=unnamed
+nnoremap yy "+yy
+vnoremap y "+y
+
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+
+""" INDENTING
 :vnoremap < <gv
 :vnoremap > >gv
 
