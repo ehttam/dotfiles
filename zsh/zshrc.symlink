@@ -234,15 +234,15 @@ findup() {
 	done
 }
 
-code() {
-	if [[ $TERM_PROGRAM = "vscode" ]]; then
-		=code $@
-	else
-		VSCODE_IPC_HOOK_CLI=$(find /tmp -name 'vscode-ipc-*.sock' -printf "%T@ %p\n" 2>/dev/null | sort -nr | head -n 1 | awk '{print $2}')
-		local CODE_BIN=$(find /home/kpalatzky/.vscode-server/bin -name 'code')
-		[ -s $CODE_BIN ] && $CODE_BIN $@
-	fi
-}
+# code() {
+# 	if [[ $TERM_PROGRAM = "vscode" ]]; then
+# 		=code $@
+# 	else
+# 		VSCODE_IPC_HOOK_CLI=$(find /tmp -name 'vscode-ipc-*.sock' -printf "%T@ %p\n" 2>/dev/null | sort -nr | head -n 1 | awk '{print $2}')
+# 		local CODE_BIN=$(find /home/kpalatzky/.vscode-server/bin -name 'code')
+# 		[ -s $CODE_BIN ] && $CODE_BIN $@
+# 	fi
+# }
 
 # Set zsh options
 setopt correct             # Turn on spelling correction
