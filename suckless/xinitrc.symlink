@@ -1,0 +1,6 @@
+#!/bin/bash
+
+exec ~/dotfiles/bin/nitrogen_bg &
+exec ~/dotfiles/bin/dwm_status &
+
+exec dwm 2> ~/tmp/dwm.log
