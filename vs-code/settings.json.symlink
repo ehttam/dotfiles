@@ -187,5 +187,6 @@
     },
     "html.mirrorCursorOnMatchingTag": false,
     "files.eol": "\n",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "window.zoomLevel": 1
 }
