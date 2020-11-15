@@ -38,7 +38,8 @@ Desktop Entry]
 Encoding=UTF-8
 Name=Dwm
 Comment=Dynamic window manager
-Exec=dwm
+# Exec=dwm
+Exec=/home/matthe/.xinitrc
 Icon=dwm
 Type=XSession
 
