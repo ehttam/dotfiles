@@ -7,5 +7,3 @@ config/nvim/plugged/
 config/nvim/UltiSnips/
 config/nvim/syntax/
 config/nvim/autoload/
-
-suckless/dwm/dwm
