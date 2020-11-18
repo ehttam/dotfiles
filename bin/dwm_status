@@ -51,7 +51,8 @@ print_bat(){
 }
 
 print_date(){
-	echo $(date "+%a %m-%d %T%:::z") $(TZ=CET date "+ %H%:::z")
+	# echo $(date "+%a %m-%d %T%:::z") $(TZ=CET date "+ %H%:::z")
+	echo $(date "+%a %m-%d %T") 
 }
 
 print_record(){
@@ -64,6 +65,6 @@ print_record(){
 
 while true
 do
-	xsetroot -name "$(print_mem) $(print_network) $(print_temp) $(print_wifi) $(print_bat) $(print_record) $(print_date)"
+	xsetroot -name "$(print_mem) $(print_network) $(print_temp) $(print_wifi) $(print_date) $(print_bat)"
 	sleep 1
 done
