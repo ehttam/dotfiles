@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# ln -s /home/matthe/dotfiles/bin/ideadwm /usr/local/bin/ideadwm
+
+wmname LG3D
+export IDEA_JDK=/usr/lib/jvm/java-11-openjdk-amd64
+/opt/idea-IC-202.7660.26/bin/idea.sh
