@@ -362,6 +362,7 @@ alias dcd="docker-compose down"
 alias dcr="docker-compose restart"
 alias dcf="docker-compose logs --tail=0 --follow"
 
+# default cmds
 cd ~
 neofetch
 . /usr/share/autojump/autojump.sh
