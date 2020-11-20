@@ -1,2 +1,2 @@
-nitrogen --set-scaled ~/Pictures/dodpvhyngl631.jpg
+nitrogen --set-scaled ~/Pictures/blue-dark-yellow-abstract-artistic-4k-hw-2560x1440.jpg
 echo "nitrogen back" >> ~/xinitrc.log
