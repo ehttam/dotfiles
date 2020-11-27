@@ -3,8 +3,8 @@
 
 print_wifi() {
 	ip=$(ip route get 8.8.8.8 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
-	if=wlan0
-		while IFS=$': \t' read -r label value
+	if=wlp3s0
+	while IFS=$': \t' read -r label value
 		do
 			case $label in SSID) SSID=$value
 				;;
@@ -52,7 +52,7 @@ print_bat(){
 
 print_date(){
 	# echo $(date "+%a %m-%d %T%:::z") $(TZ=CET date "+ %H%:::z")
-	echo $(date "+%a %m-%d %T") 
+	echo $(date "+%a %d. %b %T") 
 }
 
 print_record(){
