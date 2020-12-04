@@ -12,7 +12,8 @@ $ ln -s ....
 
 e.g.
 
-```$ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
+```
+$ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ```
 
 ## SUCKLESS DWM
@@ -44,5 +45,32 @@ Icon=dwm
 Type=XSession
 
 ```
+
+### Brightness Button
+```
+$ sudo vim /etc/sudoers
+```
+-->
+```
+%sudo   ALL=(ALL) NOPASSWD:/home/matthe/dotfiles/bin/brightness
+%sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b10/brightness
+```
+
+### touchpad
+Natural Scrolling aktiviernen
+https://www.topbug.net/blog/2017/02/23/enable-natural-scrolling-for-trackpads-using-libinput/
+
+```
+$ xinput 
+$ xinput --list
+$ xinput --list-props "ETPS/2 Elantech Touchpad"
+$ xinput --set-prop "ETPS/2 Elantech Touchpad" " libinput Natural Scrolling Enabled" 1
+```
+
+--> ~/.xinitrc
+```
+ xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+```
+
 
 
