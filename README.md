@@ -56,6 +56,15 @@ $ sudo vim /etc/sudoers
 %sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b10/brightness
 ```
 
+### fscreenshot
+
+```
+$ sudo apt install flameshot
+$ mkdir -p ~/Pictures/screenshots
+$ sudo chmod 777 ~/Pictures/screenshots
+$ sudo ln -s /home/dotefiles/XXX/bin/fscreenshot /usr/bin/fscreenshot
+``` 
+
 ### touchpad
 Natural Scrolling aktiviernen
 https://www.topbug.net/blog/2017/02/23/enable-natural-scrolling-for-trackpads-using-libinput/
