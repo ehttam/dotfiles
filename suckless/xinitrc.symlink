@@ -3,4 +3,9 @@
 exec ~/dotfiles/bin/nitrogen_bg &
 exec ~/dotfiles/bin/dwm_status &
 
+# activate tapping
+xinput set-prop 13 293 1
+# activate natural scrolling
+xinput set-prop 13 301 1
+
 exec dwm 2> ~/tmp/dwm.log
