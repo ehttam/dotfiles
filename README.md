@@ -81,3 +81,7 @@ $ xinput --set-prop "ETPS/2 Elantech Touchpad" " libinput Natural Scrolling Enab
  xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 ```
 
+### DARK THEME globally
+
+If you're not using gnome or xfce but have some gtk apps installed then you could always set your theme preferences.
+Edit the file `~/.config/gtk-3.0/settings.ini` and set `gtk-application-prefer-dark-theme=1` 
