@@ -346,10 +346,16 @@ then
 	PATH="$HOME/dotfiles/bin:$PATH"
 fi
 
+# GO PATH
+if test -d "/usr/local/go/bin"
+then
+	PATH=$PATH:/usr/local/go/bin
+fi
+
 # Check if there is tmux and use it
-# if command -v tmux>/dev/null; then
-#	[[ ! $TERM =~ screen ]] && [[ $TERM_PROGRAM != "vscode" ]] && [ -z $TMUX ] && exec tmux -2
-# fi
+if command -v tmux>/dev/null; then
+	[[ ! $TERM =~ screen ]] && [[ $TERM_PROGRAM != "vscode" ]] && [ -z $TMUX ] && exec tmux -2
+fi
 
 
 # intellij
