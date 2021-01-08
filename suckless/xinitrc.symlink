@@ -7,5 +7,7 @@ exec ~/dotfiles/bin/dwm_status &
 xinput set-prop 13 293 1
 # activate natural scrolling
 xinput set-prop 13 301 1
+# slow down trackpoint speed
+xinput set-prop 14 313 -0.5 
 
 exec dwm 2> ~/tmp/dwm.log
