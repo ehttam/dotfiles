@@ -80,6 +80,14 @@ $ xinput --set-prop "ETPS/2 Elantech Touchpad" " libinput Natural Scrolling Enab
 ```
  xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 ```
+### trackpoint
+slow down trackpoint speed
+
+--> ~/.xinitrc
+```
+# slow down trackpoint speed
+xinput set-prop 14 313 -0.5 
+``` 
 
 ### DARK THEME globally
 
