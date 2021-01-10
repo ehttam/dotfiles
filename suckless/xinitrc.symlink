@@ -7,6 +7,8 @@ exec ~/dotfiles/bin/dwm_status &
 xinput set-prop 13 293 1
 # activate natural scrolling
 xinput set-prop 13 301 1
+# speed up touchpad
+xinput set-prop 13 313 0.4 
 # slow down trackpoint speed
 xinput set-prop 14 313 -0.5 
 
