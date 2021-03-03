@@ -56,7 +56,7 @@ $ sudo vim /etc/sudoers
 %sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b10/brightness
 ```
 
-### fscreenshot
+### FSCREENSHOT
 
 ```
 $ sudo apt install flameshot
@@ -65,7 +65,7 @@ $ sudo chmod 777 ~/Pictures/screenshots
 $ sudo ln -s /home/dotefiles/XXX/bin/fscreenshot /usr/bin/fscreenshot
 ``` 
 
-### touchpad
+### TOUCHPAD
 Natural Scrolling aktiviernen
 https://www.topbug.net/blog/2017/02/23/enable-natural-scrolling-for-trackpads-using-libinput/
 
@@ -80,7 +80,7 @@ $ xinput --set-prop "ETPS/2 Elantech Touchpad" " libinput Natural Scrolling Enab
 ```
  xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 ```
-### trackpoint
+### TRACKPOINT
 slow down trackpoint speed
 
 --> ~/.xinitrc
@@ -89,7 +89,7 @@ slow down trackpoint speed
 xinput set-prop 14 313 -0.5 
 ``` 
 
-### DARK THEME globally
+### DARK THEME GLOBALLY
 
 If you're not using gnome or xfce but have some gtk apps installed then you could always set your theme preferences.
 Edit the file `~/.config/gtk-3.0/settings.ini` and set `gtk-application-prefer-dark-theme=1` 
