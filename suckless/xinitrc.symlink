@@ -4,12 +4,16 @@ exec ~/dotfiles/bin/nitrogen_bg &
 exec ~/dotfiles/bin/dwm_status &
 
 # activate tapping
-xinput set-prop 13 293 1
+# xinput set-prop 13 301 1
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 # activate natural scrolling
-xinput set-prop 13 301 1
+# xinput set-prop 13 309 1
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 # speed up touchpad
-xinput set-prop 13 313 0.4 
+# xinput set-prop 13 321 0.4 
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Accel Speed" 0.4
 # slow down trackpoint speed
-xinput set-prop 14 313 -0.5 
+# xinput set-prop 14 321 -0.5 
+xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
 
 exec dwm 2> ~/tmp/dwm.log

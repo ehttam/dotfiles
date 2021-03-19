@@ -73,12 +73,17 @@ https://www.topbug.net/blog/2017/02/23/enable-natural-scrolling-for-trackpads-us
 $ xinput 
 $ xinput --list
 $ xinput --list-props "ETPS/2 Elantech Touchpad"
-$ xinput --set-prop "ETPS/2 Elantech Touchpad" " libinput Natural Scrolling Enabled" 1
+$ xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 ```
 
 --> ~/.xinitrc
 ```
- xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+# activate tapping
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+# activate natural scrolling
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+# speed up touchpad
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Accel Speed" 0.4
 ```
 ### TRACKPOINT
 slow down trackpoint speed
@@ -86,7 +91,7 @@ slow down trackpoint speed
 --> ~/.xinitrc
 ```
 # slow down trackpoint speed
-xinput set-prop 14 313 -0.5 
+xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
 ``` 
 
 ### DARK THEME GLOBALLY
