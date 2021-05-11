@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
 exec ~/dotfiles/bin/nitrogen_bg &
 exec ~/dotfiles/bin/dwm_status &
 
@@ -15,5 +18,8 @@ xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Accel Speed" 0.4
 # slow down trackpoint speed
 # xinput set-prop 14 321 -0.5 
 xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
+
+# picom & # try fix tearing
+xrandr --output eDP --set TearFree on
 
 exec dwm 2> ~/tmp/dwm.log
