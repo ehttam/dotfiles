@@ -16,7 +16,8 @@ e.g.
 $ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ```
 
-## SUCKLESS DWM
+## SUCKLESS DWM ON UBUNTU 
+Lenovo ThinkPad T14s AMD
 
 ```
 $ sudo apt-get install build-essential libx11-dev libxinerama-dev sharutils suckless-tools
@@ -66,7 +67,7 @@ $ sudo ln -s /home/dotefiles/XXX/bin/fscreenshot /usr/bin/fscreenshot
 ``` 
 
 ### TOUCHPAD
-Natural Scrolling aktiviernen
+activate natural scrolling
 https://www.topbug.net/blog/2017/02/23/enable-natural-scrolling-for-trackpads-using-libinput/
 
 ```
@@ -92,6 +93,15 @@ slow down trackpoint speed
 ```
 # slow down trackpoint speed
 xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
+``` 
+
+### SCREEN / DISPLAY TEARING
+--> ~/.xinitrc
+```
+xrandr --auto
+...
+# picom & # try fix tearing
+xrandr --output eDP --set TearFree on
 ``` 
 
 ### DARK THEME GLOBALLY

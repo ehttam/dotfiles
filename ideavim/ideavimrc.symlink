@@ -20,9 +20,16 @@ nnoremap <C-i> :action Forward<CR>
 nnoremap gn :action JumpToLastChange<CR>
 nnoremap gp :action JumpToNextChange<CR
 map <Space> :action GotoNextError<CR>
+nnoremap mb <F11><CR>
+
 
 """ CLIPBOARD SETTINGS
-set clipboard+=unnamed
+" set clipboard+=unnamed
+" yank/paste to/from system clipboard
+map <leader>y "*y
+map <leader>p "*p
+set clipboard=unnamed
+
 nnoremap yy "+yy
 vnoremap y "+y
 
@@ -76,7 +83,8 @@ nmap <leader>I :action SelectIn<cr>
 nmap <leader>e :action RecentFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>p :action JumpToLastWindow<cr>
-nmap <leader>b :action ShowBookmarks<cr>
+nmap <leader>B :action ShowBookmarks<cr>
+nmap <leader>b :action ToggleLineBreakpoint<cr>
 nmap <leader>z :action HideAllWindows<cr>
 
 " Building, Running and Debugging
@@ -88,3 +96,4 @@ nmap ,b :action Debug<cr>
 nmap ,d :action DebugClass<cr>
 nmap ,t :action RerunTests<cr>
 nmap ,T :action RerunFailedTests<cr>
+" nnoremap <leader>b <C><F8><CR>
