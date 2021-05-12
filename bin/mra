@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo $USER `date` >> /home/matthe/tmp/key.log
+# create symlink in /us/local/bin
+# chmod 666 /sys/class/backlight/amdgpu_bl0/brightness
+# better way -> sudo visudo -> NOPASSWD for scripts
+# %sudo   ALL=(ALL) NOPASSWD:/home/matthe/dotfiles/bin/brightness
+# %sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b10/brightness
+
+# echo $USER >> /home/matthe/tmp/key.log
 
 bd=/sys/class/backlight/amdgpu_bl0/brightness
 
@@ -8,16 +14,13 @@ bdv=$(cat $bd)
 
 case $1 in
 	up)
-		echo "up" >> /home/matthe/tmp/key.log
 		echo $(( bdv + 20 )) > $bd
 		cat $bd
 	;;
 	down)
-		echo "down" >> /home/matthe/tmp/key.log
 		echo $(( bdv - 20 )) > $bd
 		cat $bd
 	;;
 	*)
 	echo "$bdv"
-	echo "$bdv" >> /home/matthe/tmp/key.log
 esac
