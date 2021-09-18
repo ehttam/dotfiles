@@ -108,3 +108,13 @@ xrandr --output eDP --set TearFree on
 
 If you're not using gnome or xfce but have some gtk apps installed then you could always set your theme preferences.
 Edit the file `~/.config/gtk-3.0/settings.ini` and set `gtk-application-prefer-dark-theme=1` 
+Edit the file `~/.config/gtk-4.0/settings.ini` and set `gtk-application-prefer-dark-theme=1` 
+
+``` 
+[Settings]
+gtk-theme-name=Nordic-master
+gtk-application-prefer-dark-theme=0
+``` 
+
+https://www.youtube.com/watch?v=3jvFpYaSoPo
+https://varunbpatil.github.io/2013/09/28/dwm.html
