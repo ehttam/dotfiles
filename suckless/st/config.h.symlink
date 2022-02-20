@@ -185,6 +185,12 @@ static MouseShortcut mshortcuts[] = {
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
+/* 
+
+TERMMOD is CRTL + SHIFT + ...
+zoom => CRTL + SHIFT + PAGEUP
+
+*/
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
