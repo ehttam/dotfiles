@@ -118,3 +118,10 @@ gtk-application-prefer-dark-theme=0
 
 https://www.youtube.com/watch?v=3jvFpYaSoPo
 https://varunbpatil.github.io/2013/09/28/dwm.html
+
+
+
+### ST / TMUX: GERNERAL
+
+* To change font size use `STRG + SHIFT + pgup` or `STRG + SHIFT + pgdown`
+* copy & paste
