@@ -123,5 +123,20 @@ https://varunbpatil.github.io/2013/09/28/dwm.html
 
 ### ST / TMUX: GERNERAL
 
-* To change font size use `STRG + SHIFT + pgup` or `STRG + SHIFT + pgdown`
-* copy & paste
+#### FONT SIZE
+
+To change font size use `STRG + SHIFT + pgup` or `STRG + SHIFT + pgdown`
+
+#### COPY & PASTE
+
+1. `<tmux prefix> + ESCAPE`. e.g. `STRG+A, ESCAPE`
+  (wait a second before hitting ESCAPE. in the left bottom corner you will see [tmux] mode instead of zsh)
+1. navigate the copy mode with vi-like-keypindings
+1. select with `v`
+1. yank with `y`
+1. paste with `<tmux prefix> + p`
+
+https://www.rockyourcode.com/copy-and-paste-in-tmux/
+https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
+
+paste from clipboard into st by using `STRG + SHIFT + V`
