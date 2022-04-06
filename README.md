@@ -16,7 +16,7 @@ e.g.
 $ ln -s ~/dotfiles/vim/vimrc.symlink ~/.vimrc
 ```
 
-## SUCKLESS DWM ON UBUNTU 
+## SUCKLESS DWM ON UBUNTU (20.04 LTS)
 Lenovo ThinkPad T14s AMD
 
 ```
