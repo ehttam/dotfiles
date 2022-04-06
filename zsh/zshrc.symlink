@@ -361,6 +361,11 @@ fi
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
+# xmodmap: caps_lock + hjkl
+xmodmap /home/matthe/.xmodmap
+# caps_lock as escape
+# xcape -e 'Mode_switch=Escape'
+
 # intellij
 # alias intellij="~/dotfiles-mra/bin/intellij/run.sh"
 # alias intellijcore="~/scripts/intellij/run-core.sh"

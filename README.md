@@ -140,3 +140,25 @@ https://www.rockyourcode.com/copy-and-paste-in-tmux/
 https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
 
 paste from clipboard into st by using `STRG + SHIFT + V`
+
+### MAP KEYS
+
+Step 1 (mapping caps_lock + hjkl): 
+Create a file (say "~/.xmodmap") with the following content:
+```
+keycode 66 = Mode_switch
+keysym h = h H Left
+keysym l = l L Right
+keysym k = k K Up
+keysym j = j J Down
+keysym u = u U Prior
+keysym i = i I Home
+keysym o = o O End
+keysym p = p P Next
+```
+
+Run xmodmap ~/.xmodmap.
+
+Step 2 (caps_lock as escape): Run `xcape -e 'Mode_switch=Escape'`.
+
+Step 3 (optional): To avoid manually applying the keybindings, put the above 2 commands into your zshrc file.
