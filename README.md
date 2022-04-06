@@ -1,4 +1,4 @@
-# DOTFILES **arch**pad
+# DOTFILES **arch**pad (Lenovo ThinkPad T14s Gen 1 AMD)
 
 ## CLONE REPO
 ```
@@ -154,7 +154,7 @@ keysym j = j J Down
 keysym u = u U Prior
 keysym i = i I Home
 keysym o = o O End
-keysym p = p P Next
+keysym n = n N Next
 ```
 
 Run xmodmap ~/.xmodmap.
