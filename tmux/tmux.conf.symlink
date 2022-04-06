@@ -90,6 +90,10 @@ bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reatt
 # bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 # bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
+# https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
+# Copy from tmux buffer to system buffer (clipboard)
+# bind -t vi-copy y copy-pipe "xclip -sel clip -i"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 
 #####################
