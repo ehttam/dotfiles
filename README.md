@@ -1,4 +1,5 @@
-# DOTFILES **arch**pad (Lenovo ThinkPad T14s Gen 1 AMD)
+# DOTFILES **arch**pad  
+(Lenovo ThinkPad T14s Gen 1 AMD)
 
 ## CLONE REPO
 ```
