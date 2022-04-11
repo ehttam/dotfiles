@@ -1,8 +1,8 @@
 # DOTFILES **arch**pad  
 (Lenovo ThinkPad T14s Gen 1 AMD)
 
-![screenshot A](_assets/screen.png)
-![screenshot B](_assets/screen-dwm.png)
+![screenshot A](_assets/screen-dwm.png)
+![screenshot B](_assets/screen.png)
 
 ## CLONE REPO
 ```
