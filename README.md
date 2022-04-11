@@ -1,6 +1,9 @@
 # DOTFILES **arch**pad  
 (Lenovo ThinkPad T14s Gen 1 AMD)
 
+![screenshot A](_assets/screen.png)
+![screenshot B](_assets/screen-dwm.png)
+
 ## CLONE REPO
 ```
 $ git clone ...
@@ -23,7 +26,7 @@ Lenovo ThinkPad T14s AMD
 ```
 $ sudo apt-get install build-essential libx11-dev libxinerama-dev sharutils suckless-tools
 
-$ git clone https://git.suckless.org/dwm ~/dotfiles/suckless/dwm
+$ git clone https://git.suckless.org/dwm ~/.suckless/dwm
 
 $ sudo make clean install
 ```
