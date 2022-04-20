@@ -19,7 +19,17 @@ xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Accel Speed" 0.4
 # xinput set-prop 14 321 -0.5 
 xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
 
+# TODO: caps:escape??
+# setxkbmap -model thinkpad -layout us -option caps:escape
+# xset m 5 1
+
+# TODO: xautolock -time 10 -locker slock &
+# xss-lock -- /usr/bin/slock &
+
 # picom & # try fix tearing
 xrandr --output eDP --set TearFree on
+
+export CM_DIR=/home/matthe/clip_history/
+clipmenud &
 
 exec dwm 2> ~/tmp/dwm.log

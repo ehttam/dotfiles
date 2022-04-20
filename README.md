@@ -145,6 +145,33 @@ https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-
 
 paste from clipboard into st by using `STRG + SHIFT + V`
 
+#### COPY & PASTE clipmenu, tmux-yank
+
+Install clipmenu
+
+```  
+cd ~/.suckless
+git clone https://github.com/cdown/clipnotify.git
+cd clipnotify
+sudo make
+sudo make install
+
+cd ~/.suckless
+git clone https://github.com/cdown/clipmenu.git
+cd clipmenu
+sudo make
+sudo make install
+```  
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) and [tmux-yank](https://github.com/tmux-plugins/tmux-yank).
+
+More [info](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
+
+Usage
+```
+Selecting text with the mouse copies it into the primary selection
+Choose from clipmenu by dwm Modky+Insert `Win+Insert`
+```
+
 ### MAP KEYS
 
 Step 1 (mapping caps_lock + hjkl): 

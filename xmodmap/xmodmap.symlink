@@ -5,5 +5,5 @@ keysym k = k K Up
 keysym j = j J Down
 keysym u = u U Prior
 keysym i = i I Home
-keysym o = o O End
+keysym n = n N End
 keysym p = p P Next

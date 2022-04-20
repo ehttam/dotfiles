@@ -93,7 +93,7 @@ bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reatt
 # https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
 # Copy from tmux buffer to system buffer (clipboard)
 # bind -t vi-copy y copy-pipe "xclip -sel clip -i"
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+# bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 
 #####################
@@ -101,3 +101,23 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 #####################
 
 source ~/dotfiles/tmux/base16.sh
+
+#####################
+##   tmux plugins  ##
+#####################
+# https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
