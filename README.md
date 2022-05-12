@@ -169,7 +169,7 @@ More [info](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
 Usage
 ```
 Selecting text with the mouse copies it into the primary selection
-Choose from clipmenu by dwm Modky+Insert `Win+Insert`
+Choose from clipmenu by dwm `Modky+Insert` `Super+Insert`
 ```
 
 ### MAP KEYS
@@ -202,6 +202,13 @@ sudo apt install -y pass
 cd /usr/local/bin
 wget https://git.zx2c4.com/password-store/plain/contrib/dmenu/passmenu
 
+```
+
+Keybindings
+
+
+```
+Super+Shift+P => passmenu
 ```
 
 [ more ](https://www.passwordstore.org)  
