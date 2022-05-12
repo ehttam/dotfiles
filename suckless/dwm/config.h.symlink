@@ -68,6 +68,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *urlcmd[]  = { "clipmenu-url", NULL };
 static const char *clipcmd[]  = { "clipmenu", "-i", "-fn", dmenufont, NULL };
+static const char *passcmd[]  = { "passmenu", NULL };
 static const char *cmdmra[]  = { "mra", "up", NULL };
 static const char *cmdbrightnessup[]  = { "sudo", "brightness", "up", NULL };
 static const char *cmdbrightnessdown[]  = { "sudo", "brightness", "down", NULL };
@@ -84,6 +85,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      spawn,          {.v = urlcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_p,		spawn,         {.v = passcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ 0,                            XK_Print,  spawn,          {.v = screenshot } },
 	{ MODKEY,                       XK_F12,    spawn,           {.v = cmdlock } },

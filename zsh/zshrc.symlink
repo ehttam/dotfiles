@@ -366,6 +366,9 @@ xmodmap /home/matthe/.xmodmap
 # caps_lock as escape
 # xcape -e 'Mode_switch=Escape'
 
+# pass password store
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
 # intellij
 # alias intellij="~/dotfiles-mra/bin/intellij/run.sh"
 # alias intellijcore="~/scripts/intellij/run-core.sh"

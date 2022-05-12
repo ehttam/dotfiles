@@ -193,3 +193,16 @@ Run xmodmap ~/.xmodmap.
 Step 2 (caps_lock as escape): Run `xcape -e 'Mode_switch=Escape'`.
 
 Step 3 (optional): To avoid manually applying the keybindings, put the above 2 commands into your zshrc file.
+
+
+### PASS PASSWORD STORE
+
+```
+sudo apt install -y pass
+cd /usr/local/bin
+wget https://git.zx2c4.com/password-store/plain/contrib/dmenu/passmenu
+
+```
+
+[ more ](https://www.passwordstore.org)  
+[ more ](https://ryan.himmelwright.net/post/setting-up-pass/)
