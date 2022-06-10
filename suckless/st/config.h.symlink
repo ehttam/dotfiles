@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-unsigned int defaultfg = 7;
 
 /*
  * appearance
@@ -93,6 +92,14 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+/* bg opacity */
+/* patch and xcompmgr is needed: 
+ *   patch < ~/Downloads/st-alpha-20220206-0.8.5.diff 
+ *   sudo apt install xcompmgr
+ *   
+*/
+float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
