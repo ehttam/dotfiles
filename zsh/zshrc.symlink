@@ -361,6 +361,11 @@ fi
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
+# fuck
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias FUCK)
+
 # xmodmap: caps_lock + hjkl
 xmodmap /home/matthe/.xmodmap
 # caps_lock as escape
