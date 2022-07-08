@@ -51,6 +51,32 @@ Type=XSession
 
 ```
 
+### DWM PATCHES
+
+[useless gap](https://dwm.suckless.org/patches/uselessgap/)
+
+```
+cd ~/.suckless/dwm/
+patch < dwm-uselessgap-20211119-58414bee958f2.diff
+```
+
+[rotate stack ](https://dwm.suckless.org/patches/rotatestack/)
+
+```
+cd ~/.suckless/dwm/
+patch < ~/Downloads/dwm-rotatestack-20161021-ab9571b.diff
+```
+
+### ST PATCHES
+
+[alpha](https://st.suckless.org/patches/alpha/)
+
+```
+cd ~/.suckless/st/
+patch < ~/Downloads/st-alpha-20220206-0.8.5.diff
+```
+
+
 ### Brightness Button
 ```
 $ sudo vim /etc/sudoers
