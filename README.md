@@ -220,6 +220,8 @@ Step 2 (caps_lock as escape): Run `xcape -e 'Mode_switch=Escape'`.
 
 Step 3 (optional): To avoid manually applying the keybindings, put the above 2 commands into your zshrc file.
 
+Step 4 (optional with gnome): put `dotfiles/config/autostart/xmodmap.desktop` to `~/.config/autostart`
+
 
 ### PASS PASSWORD STORE
 

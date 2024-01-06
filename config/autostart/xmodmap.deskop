@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=sh -c "$HOME/dotfiles/bin/xmodmap.sh"
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=xmodmap
+Comment=xmodmap script to use hjkl as arrow keys
