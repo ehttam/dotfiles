@@ -1,0 +1,31 @@
+# https://github.com/xremap/xremap
+# sudo xremap config.yml
+# modmap:
+#   - name: "CapsLock + H to Arrow Left"
+#     remap:
+#       CapsLock: Esc
+#   # - name: Global
+  #   remap:
+      # CapsLock/Ctrl_L -> Esc
+      # CapsLock: Esc
+keymap:
+  - name: Capslock+hjkl to Arrows
+    remap:
+      # CapsLock:
+      #   remap:
+      #     h: Left
+      CapsLock-h: Right
+      CapsLock-j: Down
+
+      # CapsLock-h: Left
+      # CapsLock-j: Down
+      # CapsLock-k: Up
+      # CapsLock-l: Right
+# virtual_modifiers:
+#   - CapsLock
+# keymap:
+#   - remap:
+#       CapsLock-h: Left
+#       CapsLock-j: Down
+#       CapsLock-k: Up
+#       CapsLock-l: Right
