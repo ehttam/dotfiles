@@ -1,5 +1,9 @@
+# WALLPAPER
 # nitrogen --set-scaled ~/Pictures/IFcqIöOS$.jpg
-nitrogen --set-scaled ~/Pictures/helmet.png
+# nitrogen --set-scaled ~/Pictures/helmet.png
+# nitrogen --set-scaled ~/Pictures/rob.jpg
+# nitrogen --set-scaled ~/Pictures/Wallpapers/scary-fast.png
+nitrogen --set-scaled ~/Pictures/Wallpapers/astro.png
 # nitrogen --set-scaled ~/Pictures/nord-mountain.png
 # nitrogen --set-scaled ~/Pictures/globe.png
 # echo "nitrogen back" >> ~/xinitrc.log
