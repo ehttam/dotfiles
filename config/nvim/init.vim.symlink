@@ -511,8 +511,11 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " coc {{{
-        Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+        " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+        "Use release branch (recommended)
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+        let g:coc_disable_startup_warning = 1
         let g:coc_global_extensions = [
         \ 'coc-css',
         \ 'coc-json',
@@ -607,7 +610,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 
 		" nunjucks support
-        Plug 'niftylettuce/vim-jinja', { 'for': 'njk' }
+        " Plug 'niftylettuce/vim-jinja', { 'for': 'njk' }
     " }}}
 
     " JavaScript {{{

@@ -84,7 +84,7 @@ $ sudo vim /etc/sudoers
 -->
 ```
 %sudo   ALL=(ALL) NOPASSWD:/home/matthe/dotfiles/bin/brightness
-%sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b10/brightness
+%sudo   ALL=(ALL) NOPASSWD:/sys/class/backlight/amdgpu_b11/brightness
 ```
 
 ### FSCREENSHOT
@@ -133,6 +133,18 @@ xrandr --auto
 # picom & # try fix tearing
 xrandr --output eDP --set TearFree on
 ``` 
+
+#### MULTI MONITOR
+
+```bash
+xrandr --output DisplayPort-0 --auto --above eDP --set TearFree on
+
+xrandr --output DisplayPort-0 --auto --left-of eDP --set TearFree on
+```
+
+#### shortcuts
+
+`mod + shift + ,`
 
 ### DARK THEME GLOBALLY
 
@@ -200,6 +212,8 @@ Choose from clipmenu by dwm `Modky+Insert` `Super+Insert`
 
 ### MAP KEYS
 
+#### X11(Xorg)
+
 Step 1 (mapping caps_lock + hjkl): 
 Create a file (say "~/.xmodmap") with the following content:
 ```
@@ -221,6 +235,12 @@ Step 2 (caps_lock as escape): Run `xcape -e 'Mode_switch=Escape'`.
 Step 3 (optional): To avoid manually applying the keybindings, put the above 2 commands into your zshrc file.
 
 Step 4 (optional with gnome): put `dotfiles/config/autostart/xmodmap.desktop` to `~/.config/autostart`
+
+#### WAYLAND
+
+[https://github.com/xremap/xremap]
+
+Install Gnome Extension https://extensions.gnome.org/extension/5060/xremap/
 
 
 ### PASS PASSWORD STORE

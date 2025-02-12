@@ -1,9 +1,5 @@
 {
-    "workbench.colorTheme": "SynthWave '84",
     "editor.fontFamily": "'Operator Mono SSM Medium', 'Operator Mono SSM Light', Consolas, 'Courier New', monospace",
-    "vscode_custom_css.imports": [
-        "file:///D:/contens/_mra/vscode/synthwave84.css"
-    ],
     "files.associations": {
         ".cflintrc": "json"
     },
@@ -20,7 +16,9 @@
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
     },
     
     "vim.sneak": true,
@@ -187,6 +185,22 @@
     },
     "html.mirrorCursorOnMatchingTag": false,
     "files.eol": "\n",
-    "editor.fontSize": 16,
-    "window.zoomLevel": 1
+    "editor.fontLigatures": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "redhat.telemetry.enabled": true,
+    "editor.wordWrap": "off",
+    "cmake.configureOnOpen": true,
+    "debug.onTaskErrors": "abort",
+    "window.zoomLevel": 1,
+    "powermode.enabled": true,
+    "powermode.shake.enabled": false,
+    "workbench.colorTheme": "SynthWave '84"
 }
