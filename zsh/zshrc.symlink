@@ -71,12 +71,17 @@ SPACESHIP_NODE_SHOW="false"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
+# Which plugins would you like to load? Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump zsh-autosuggestions docker docker-compose)
+plugins=(
+	git 
+	zsh-autosuggestions 
+  zsh-syntax-highlighting
+	docker 
+  docker-compose
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -166,9 +171,9 @@ if command -v atop>/dev/null; then
 		fi
 
 # Stop after sending count ECHO_REQUEST packets #
-alias ping='ping -c 5'
+# alias ping='ping -c 5'
 # Do not wait interval 1 second, go fast #
-alias fping='ping -c 5 -s.1'
+# alias fping='ping -c 5 -s.1'
 
 # Create human readable output
 alias mount='mount | column -t'
@@ -213,8 +218,8 @@ export LC_ALL=en_US.UTF-8
 export PYTHONPATH="$PYTHONPATH:/config"
 
 
- # Put last paused action (used by C-Z) to foreground
- bindkey '^t' fg
+# Put last paused action (used by C-Z) to foreground
+bindkey '^t' fg
 
 # Function to search upwards
 findup() {
@@ -362,9 +367,9 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 # fuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
+# eval $(thefuck --alias FUCK)
 
 # xmodmap: caps_lock + hjkl
 xmodmap /home/matthe/.xmodmap
@@ -390,8 +395,14 @@ alias dcd="docker-compose down"
 alias dcr="docker-compose restart"
 alias dcf="docker-compose logs --tail=0 --follow"
 
+alias lg="lazygit"
+
 # default cmds
 cd ~
 neofetch
-. /usr/share/autojump/autojump.sh
+# . /usr/share/autojump/autojump.sh
 
+
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
